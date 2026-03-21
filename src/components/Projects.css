@@ -1,0 +1,237 @@
+.projects-section {
+  position: relative;
+  z-index: 5;
+}
+
+.section-header {
+  margin-bottom: 6rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.section-subtitle {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  letter-spacing: 2px;
+}
+
+.projects-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  margin-bottom: 4rem;
+}
+
+/* Spotlight Card Base */
+.project-spotlight-card {
+  position: relative;
+  border-radius: 20px;
+  background: rgba(15, 15, 18, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 1.5rem 2rem;
+  display: grid;
+  grid-template-columns: 450px 1fr;
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  will-change: transform;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+}
+
+/* Spotlight Glow effect */
+.project-spotlight-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(
+    800px circle at var(--mouse-x, 0) var(--mouse-y, 0), 
+    rgba(139, 92, 246, 0.15),
+    transparent 40%
+  );
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s;
+  pointer-events: none;
+}
+
+.project-spotlight-card:hover::before {
+  opacity: 1;
+}
+
+.project-image-box {
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  max-height: 250px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+  background: #000;
+}
+
+.project-image-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  filter: grayscale(100%) contrast(1.2) brightness(0.7);
+  opacity: 0.8;
+}
+
+.project-spotlight-card:hover .project-image-img {
+  transform: scale(1.05);
+  filter: grayscale(0%) contrast(1.1) brightness(1);
+  opacity: 1;
+}
+
+.project-watermark-overlay {
+  position: absolute;
+  top: -10px;
+  left: -5px;
+  font-size: 8rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+  line-height: 1;
+  z-index: 3;
+}
+
+.relative-z {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.project-category {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #a78bfa;
+}
+
+.project-number {
+  font-family: monospace;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  opacity: 0.5;
+}
+
+.project-title-large {
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  color: white;
+}
+
+.project-large-desc {
+  font-size: 0.95rem;
+  color: #a0a0a0;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+.tech-stack-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.tech-badge {
+  padding: 0.3rem 0.8rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  font-size: 0.7rem;
+  color: var(--text-primary);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.project-footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  margin-top: auto;
+}
+
+.protocol-btn {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-text {
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.btn-text::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: white;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease;
+}
+
+.protocol-btn:hover .btn-text::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.btn-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+  background: rgba(139, 92, 246, 0.1);
+}
+
+.protocol-btn:hover .btn-icon {
+  background: #8b5cf6;
+  color: white;
+  transform: translateX(10px);
+}
+
+@media (max-width: 1024px) {
+  .project-spotlight-card {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    padding: 2rem;
+    gap: 2rem;
+  }
+}
