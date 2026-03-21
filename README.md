@@ -1,16 +1,32 @@
-# React + Vite
+# Mohd Kaif | Software Development Engineer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my production-grade, Awwwards-inspired digital portfolio. This project was engineered to showcase high-level front-end architecture, immersive 3D graphics, and modern UI/UX principles, serving as a dynamic interactive resume.
 
-Currently, two official plugins are available:
+## 🚀 Live Preview
+**Deployment Link:** *(Insert Vercel/Netlify link here once deployed)*
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Elite Features
+- **3D React Fiber Engine:** A performance-optimized deep-space scene featuring floating geometric meshes and an interactive starfield background.
+- **Widescreen Case Studies:** Cinematic layout styling for project representations, complete with grayscale-to-color hover reveals and integrated direct-download mechanisms.
+- **Infinite Skill Marquees:** Smooth, dual-band horizontal looping marquees displaying technical algorithms, coursework, and queried databases without layout shifting.
+- **Glassmorphism Architecture:** Custom frosted-glass panels layered dynamically across the contact and information sections.
+- **Serverless API Routing:** fully working email transmission integration hooked directly into the Web3Forms API.
 
-## React Compiler
+## 💻 Tech Stack
+- **Framework:** React.js, Vite
+- **3D Graphics:** Three.js, React Three Fiber, Drei
+- **Animations:** Framer Motion
+- **Styling:** Custom Vanilla CSS (Grid & Flexbox Architecture), Glassmorphism utilities
+- **Icons:** Lucide-React
+- **API:** Web3Forms (Frontend-to-Email execution)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📞 Connect With Me
+Currently open to new opportunities, collaborations, and freelance projects involving cutting-edge web or machine learning systems.
 
-## Expanding the ESLint configuration
+- **Email:** kaiferizvi2006@gmail.com
+- **Phone:** 8368530707
+- **LinkedIn:** [linkedin.com/in/mohdkaifrizvi](https://www.linkedin.com/in/mohdkaifrizvi)
+- **Location:** New Delhi, India
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+*Made with love ❤️ by Mohd Kaif.*
