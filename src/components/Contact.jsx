@@ -1,42 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Send, MapPin, Mail, Github, Linkedin, Phone, FileDown } from 'lucide-react';
 import './Contact.css';
 
 const Contact = () => {
-  const [submitStatus, setSubmitStatus] = useState("idle");
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    setSubmitStatus("loading");
-    
-    const formData = new FormData(event.target);
-    
-    // Web3Forms API Key needs to be inserted here by the user
-    formData.append("access_key", "YOUR_ACCESS_KEY_HERE");
-
-    try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData
-      });
-
-      const data = await response.json();
-
-      if (data.success) {
-        setSubmitStatus("success");
-        event.target.reset();
-        setTimeout(() => setSubmitStatus("idle"), 5000);
-      } else {
-        console.error("Form error:", data);
-        setSubmitStatus("error");
-      }
-    } catch (error) {
-      console.error("Fetch error:", error);
-      setSubmitStatus("error");
-    }
-  };
-
   return (
     <section id="contact" className="section contact-section-premium">
       <div className="container">
@@ -92,14 +59,15 @@ const Contact = () => {
              </div>
           </motion.div>
 
-          <motion.form 
+          <form 
+            action="https://formsubmit.co/kaiferizvi2006@gmail.com" 
+            method="POST"
             className="contact-form-glass glass"
-            onSubmit={handleSubmit}
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
           >
+            {/* FormSubmit Configuration */}
+            <input type="hidden" name="_subject" value="New Portfolio Contact Received!" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="box" />
             <div className="input-group">
               <label>Your Name</label>
               <input type="text" name="name" placeholder="John Doe" required className="glass-input" />
@@ -115,18 +83,10 @@ const Contact = () => {
               <textarea name="message" rows="5" placeholder="How can I help you architecture the future?" required className="glass-input"></textarea>
             </div>
             
-            <button 
-              type="submit" 
-              className="glass-submit-btn" 
-              disabled={submitStatus === 'loading' || submitStatus === 'success'}
-              style={{ opacity: submitStatus === 'loading' ? 0.7 : 1 }}
-            >
-              {submitStatus === 'loading' && 'Transmitting...'}
-              {submitStatus === 'success' && 'Transmission Successful!'}
-              {submitStatus === 'error' && 'Error. Try Again.'}
-              {submitStatus === 'idle' && <>Send Transmission <Send size={18} /></>}
+            <button type="submit" className="glass-submit-btn">
+              Send Transmission <Send size={18} />
             </button>
-          </motion.form>
+          </form>
 
         </div>
       </div>
