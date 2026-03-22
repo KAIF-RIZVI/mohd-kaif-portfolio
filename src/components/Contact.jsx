@@ -1,9 +1,50 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Send, MapPin, Mail, Github, Linkedin, Phone, FileDown } from 'lucide-react';
 import './Contact.css';
 
 const Contact = () => {
+  const [formState, setFormState] = useState("idle"); // idle, loading, success, error
+
+  const handleSecureSubmit = async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    
+    // Basic Frontend Validation
+    const name = formData.get("name");
+    const email = formData.get("email");
+    const message = formData.get("message");
+    
+    if (!name || !email || !message) {
+      setFormState("error");
+      setTimeout(() => setFormState("idle"), 3000);
+      return;
+    }
+
+    setFormState("loading");
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/kaiferizvi2006@gmail.com", {
+        method: "POST",
+        body: formData
+      });
+
+      if (response.ok) {
+        setFormState("success");
+        e.target.reset();
+        setTimeout(() => setFormState("idle"), 5000);
+      } else {
+        console.error("Submission failed");
+        setFormState("error");
+        setTimeout(() => setFormState("idle"), 3000);
+      }
+    } catch (error) {
+      console.error("Network error", error);
+      setFormState("error");
+      setTimeout(() => setFormState("idle"), 3000);
+    }
+  };
+
   return (
     <section id="contact" className="section contact-section-premium">
       <div className="container">
@@ -60,14 +101,14 @@ const Contact = () => {
           </motion.div>
 
           <form 
-            action="https://formsubmit.co/kaiferizvi2006@gmail.com" 
-            method="POST"
+            onSubmit={handleSecureSubmit}
             className="contact-form-glass glass"
           >
-            {/* FormSubmit Configuration */}
+            {/* FormSubmit Configuration & Security */}
             <input type="hidden" name="_subject" value="New Portfolio Contact Received!" />
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_template" value="box" />
+            <input type="text" name="_honey" style={{ display: 'none' }} /> {/* Honeypot Bot Trap */}
             <div className="input-group">
               <label>Your Name</label>
               <input type="text" name="name" placeholder="John Doe" required className="glass-input" />
@@ -83,8 +124,16 @@ const Contact = () => {
               <textarea name="message" rows="5" placeholder="How can I help you architecture the future?" required className="glass-input"></textarea>
             </div>
             
-            <button type="submit" className="glass-submit-btn">
-              Send Transmission <Send size={18} />
+            <button 
+              type="submit" 
+              className="glass-submit-btn"
+              disabled={formState === 'loading' || formState === 'success'}
+              style={{ opacity: formState === 'loading' ? 0.7 : 1 }}
+            >
+              {formState === 'loading' && 'Authenticating & Sending...'}
+              {formState === 'success' && 'Transmission Secured!'}
+              {formState === 'error' && 'Validation Error. Retry.'}
+              {formState === 'idle' && <>Send Transmission <Send size={18} /></>}
             </button>
           </form>
 
