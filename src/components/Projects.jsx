@@ -18,7 +18,8 @@ const projectsData = [
     description: 'Architected and developed a premium interactive web platform with an emphasis on state-of-the-art UI/UX design, smooth page transitions, and highly responsive digital environments.',
     tech: ['React.js', 'Frontend Architecture', 'UI/UX Design', 'Web Animations'],
     image: '/OriginN.png',
-    liveLink: 'https://www.originn.online'
+    liveLink: 'https://www.originn.online',
+    liveLinkText: 'Explore OriginN.online'
   },
   {
     title: 'NARI PRODUCTION',
@@ -37,7 +38,7 @@ const projectsData = [
     image: '/ibm_certificate.png',
     link: '/MOHD_KAIF_IBM_INTERNSHIP.pdf',
     downloadName: 'MOHD_KAIF_IBM_INTERNSHIP.pdf',
-    downloadText: 'Download Certificate'
+    downloadText: 'DOWNLOAD MOHD KAIF CERTIFICATE'
   }
 ];
 
@@ -112,7 +113,7 @@ const ProjectCard = ({ project, index }) => {
                target="_blank"
                rel="noopener noreferrer"
             >
-              <span className="btn-text">Live Demo</span>
+              <span className="btn-text" style={{ textTransform: 'uppercase' }}>{project.liveLinkText || "Live Demo"}</span>
               <div className="btn-icon">
                  <ExternalLink size={20} />
               </div>
