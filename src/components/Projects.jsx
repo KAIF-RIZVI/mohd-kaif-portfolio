@@ -13,6 +13,14 @@ const projectsData = [
     link: 'https://github.com/KAIF-RIZVI/DSA.git'
   },
   {
+    title: 'OriginN',
+    category: 'Full-Stack Web Development',
+    description: 'Architected and developed a premium interactive web platform with an emphasis on state-of-the-art UI/UX design, smooth page transitions, and highly responsive digital environments.',
+    tech: ['React.js', 'Frontend Architecture', 'UI/UX Design', 'Web Animations'],
+    image: '/OriginN.png',
+    liveLink: 'https://www.originn.online'
+  },
+  {
     title: 'NARI PRODUCTION',
     category: 'Web Development',
     description: 'A modern web application encompassing advanced frontend interface architectures and robust backend database integrations.',
@@ -20,15 +28,6 @@ const projectsData = [
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200',
     link: 'https://github.com/KAIF-RIZVI/NARI-PRODUCTION.git',
     liveLink: 'https://naari-bdca4.web.app'
-  },
-  {
-    title: 'OriginN',
-    category: 'Full-Stack Web Development',
-    description: 'Architected and developed a premium interactive web platform with an emphasis on state-of-the-art UI/UX design, smooth page transitions, and highly responsive digital environments.',
-    tech: ['React.js', 'Frontend Architecture', 'UI/UX Design', 'Web Animations'],
-    image: '/OriginN.png',
-    link: 'https://github.com/KAIF-RIZVI',
-    liveLink: 'https://www.originn.online'
   },
   {
     title: 'IBM Virtual AI Internship',
@@ -89,20 +88,22 @@ const ProjectCard = ({ project, index }) => {
         </div>
         
         <div className="project-footer" style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
-          <a 
-             href={project.link} 
-             className="protocol-btn"
-             target={project.link.startsWith('http') ? "_blank" : undefined}
-             rel={project.link.startsWith('http') ? "noopener noreferrer" : undefined}
-             download={project.downloadName ? project.downloadName : undefined}
-          >
-            <span className="btn-text">
-               {project.downloadText || (project.downloadName ? "Download Resume" : "View Work Sample")}
-            </span>
-            <div className="btn-icon">
-               {project.downloadName ? <FileDown size={20} /> : <ExternalLink size={20} />}
-            </div>
-          </a>
+          {project.link && (
+            <a 
+               href={project.link} 
+               className="protocol-btn"
+               target={project.link.startsWith('http') ? "_blank" : undefined}
+               rel={project.link.startsWith('http') ? "noopener noreferrer" : undefined}
+               download={project.downloadName ? project.downloadName : undefined}
+            >
+              <span className="btn-text">
+                 {project.downloadText || (project.downloadName ? "Download Resume" : "View Work Sample")}
+              </span>
+              <div className="btn-icon">
+                 {project.downloadName ? <FileDown size={20} /> : <ExternalLink size={20} />}
+              </div>
+            </a>
+          )}
           
           {project.liveLink && (
             <a 
