@@ -141,20 +141,7 @@ const Contact = () => {
       </div>
       
       <footer className="portfolio-footer">
-        <div className="footer-education" style={{ textAlign: 'center', marginBottom: '2.5rem', color: 'var(--text-secondary)' }}>
-           <h4 style={{ color: 'var(--text-primary)', marginBottom: '0.8rem', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '0.9rem' }}>Education</h4>
-           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem', alignItems: 'center' }}>
-             <p style={{ fontWeight: '500', color: '#fff', fontSize: '1.1rem' }}>B.Tech in Computer Science & Engineering (Data Science)</p>
-             <p>KCC Institute of Technology and Management, Greater Noida</p>
-             <div style={{ display: 'flex', gap: '1rem', fontSize: '0.9rem', opacity: 0.8, marginTop: '0.2rem', padding: '0.4rem 1rem', background: 'rgba(255,255,255,0.03)', borderRadius: '20px', border: '1px solid rgba(255,255,255,0.05)' }}>
-               <span>August 2023 – August 2027</span>
-               <span style={{ color: 'rgba(255,255,255,0.3)' }}>|</span>
-               <span>CGPA: 8.38 / 10</span>
-             </div>
-           </div>
-        </div>
-
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '2rem', width: '100%' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', marginBottom: '3rem' }}>
           <a 
             href="https://www.linkedin.com/in/mohdkaifrizvi" 
             target="_blank" 
@@ -173,6 +160,19 @@ const Contact = () => {
           >
             <FileDown size={14} /> Download Final Resume
           </a>
+        </div>
+
+        <div className="footer-education" style={{ textAlign: 'center', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '2rem', color: 'var(--text-secondary)', width: '100%' }}>
+           <h4 style={{ color: 'var(--text-primary)', marginBottom: '0.8rem', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '0.9rem' }}>Education</h4>
+           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem', alignItems: 'center' }}>
+             <p style={{ fontWeight: '500', color: '#fff', fontSize: '1.1rem' }}>B.Tech in Computer Science & Engineering (Data Science)</p>
+             <p>KCC Institute of Technology and Management, Greater Noida</p>
+             <div style={{ display: 'flex', gap: '1rem', fontSize: '0.9rem', opacity: 0.8, marginTop: '0.2rem', padding: '0.4rem 1rem', background: 'rgba(255,255,255,0.03)', borderRadius: '20px', border: '1px solid rgba(255,255,255,0.05)' }}>
+               <span>August 2023 – August 2027</span>
+               <span style={{ color: 'rgba(255,255,255,0.3)' }}>|</span>
+               <span>CGPA: 8.38 / 10</span>
+             </div>
+           </div>
         </div>
       </footer>
     </section>
