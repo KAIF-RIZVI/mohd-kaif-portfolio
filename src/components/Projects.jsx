@@ -22,6 +22,15 @@ const projectsData = [
     liveLink: 'https://naari-bdca4.web.app'
   },
   {
+    title: 'OriginN',
+    category: 'Full-Stack Web Development',
+    description: 'Architected and developed a premium interactive web platform with an emphasis on state-of-the-art UI/UX design, smooth page transitions, and highly responsive digital environments.',
+    tech: ['React.js', 'Frontend Architecture', 'UI/UX Design', 'Web Animations'],
+    image: '/OriginN.png',
+    link: 'https://github.com/KAIF-RIZVI',
+    liveLink: 'https://www.originn.online'
+  },
+  {
     title: 'IBM Virtual AI Internship',
     category: 'Experience & Core Coursework',
     description: 'Artificial Intelligence Virtual Intern at IBM Skills Network. Engineered interactive data dashboards, executed complex preprocessing, and applied Python machine learning techniques (classification, clustering). Masters core fundamentals: OOPS, OS, DBMS, and Web Development.',
