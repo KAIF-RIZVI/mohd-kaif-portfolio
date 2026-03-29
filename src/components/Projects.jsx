@@ -19,7 +19,8 @@ const projectsData = [
     tech: ['React.js', 'Frontend Architecture', 'UI/UX Design', 'Web Animations'],
     image: '/OriginN.png',
     liveLink: 'https://www.originn.online',
-    liveLinkText: 'Explore OriginN.online'
+    liveLinkText: 'Explore OriginN.online',
+    developerCredit: 'Developed by MOHD KAIF'
   },
   {
     title: 'NARI PRODUCTION',
@@ -120,6 +121,12 @@ const ProjectCard = ({ project, index }) => {
             </a>
           )}
         </div>
+        
+        {project.developerCredit && (
+          <div style={{ marginTop: '1.5rem', fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)', letterSpacing: '1px', textTransform: 'uppercase', fontStyle: 'italic' }}>
+            {project.developerCredit}
+          </div>
+        )}
       </div>
     </motion.div>
   );
